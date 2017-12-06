@@ -6,6 +6,20 @@
 </head>
 
 <body>
+  <h2> Try to guess what letter the computer is going to choose</h2>
+  <h3> <div id= "empty-div"></div></h3>
+  <!-- <h3> you have var html "<p>chancesLeft: " + chancesLeft + "</p>"; left</h3>
+
+setInterval(function(){
+   document.getElementById("chancesLeft").innerHTML = user_speed.toFixed(2);
+}, 1000);
+
+
+ -->
+
+
+
+
   <div id = "game">
   </div>
 
@@ -33,16 +47,23 @@ if (userGuess == computerGuess){
   win++
 }
 
-else if (userGuess != computerGuess){
+if (userGuess != computerGuess){
   chancesLeft--
 }
 
-// when chancesLeft == 0
-//   lose++
+if (chancesLeft == 0){
+    lose++, chancesLeft = 9
+ }
+// for (i = 0; i < 9; i++) {
+//     text += "The number is " + i + "<br>";
+// }
+// for (i = 0; i < cars.length; i++) { 
+//     text += cars[i] + "<br>";
+// }
 
 var html = "<p>Press any letter to start playing</p>" +         "<p>wins: " + win + "</p>" +
                          "<p>losses: " + lose + "</p>" +
-                         "<p>draw: " + chancesLeft + "</p>";
+                         "<p>chancesLeft: " + chancesLeft + "</p>";
 
                          // Display the result to the user
                          document.querySelector('#game').innerHTML = html;
